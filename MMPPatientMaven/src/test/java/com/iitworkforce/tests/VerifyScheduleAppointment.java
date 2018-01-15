@@ -14,10 +14,9 @@ import com.namtg.baseclass.PatientBaseClass;
 import com.namtg.util.PatientHelper;
 
 public class VerifyScheduleAppointment extends PatientBaseClass {
-
+//made some changes in the test
     @Parameters({"patienturl","patientUname","patientPswd","subject","reason"})
-	@Test
-	//(description = "Schedule an Appointment by providing symptoms. The data should be shown as an entry in the patient portal.",enabled=false)
+	@Test(description = "Schedule an Appointment by providing symptoms. The data should be shown as an entry in the patient portal.",enabled=false)
 	public  void validatePatientMessage(String patienturl, String patientUname, String patientPswd, String subject,String reason) throws IOException {
 		
 		//login		

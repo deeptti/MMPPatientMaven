@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" verbose ="5">
+  <test name="Test">
+  <!-- patient openUrl --> 
+    <parameter name="patienturl" value="http://96.84.175.78/MMP-Release2-Integrated-Build.6.8.000/portal/login.php"/>
+<!-- admin invokeBrowser --> 
+    <parameter name="adminurl" value="http://96.84.175.78/MMP-Release2-Admin-Build.2.1.000/login.php"/>
+<!-- patient login -->   
+    <parameter name="patientUname" value="Mike"/>
+    <parameter name="patientPswd" value="Selenium123"/>
+<!-- admin login -->   
+    <parameter name="adminUname" value="Roger@101"/>
+    <parameter name="adminPswd" value="Roger_101"/>
+<!-- validate patient message -->   
+    <parameter name="subject" value="bill"/>
+    <parameter name="reason" value="Please send me the detailed bill."/>
+<!-- verify Appointment -->
+	<parameter name="patientName" value= "Mike"/> 
+    <classes>
+      <class name="com.iitworkforce.tests.VerifyScheduleAppointment"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

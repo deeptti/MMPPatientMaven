@@ -1,0 +1,102 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.iitworkforce.tests</groupId>
+  <artifactId>MMPPatientMaven</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>MMPPatientMaven</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+ <!-- to convert jdk -->
+  <build>
+    <plugins>
+    	<plugin>
+			<artifactId>maven-compiler-plugin</artifactId>
+			  <version>3.1</version>
+				<configuration>
+					<fork>true</fork>
+					<executable>C:\Program Files\Java\jdk1.8.0_65\bin\javac.exe</executable>
+				</configuration>
+			</plugin>
+      <plugin>
+ <!-- to invoke testNG in pom-->
+      	<groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.18.1</version>
+        <configuration>
+          	<forkCount>0</forkCount>
+			<suiteXmlFiles>
+				<suiteXmlFile>testng.xml</suiteXmlFile>
+			</suiteXmlFiles>
+        </configuration>
+        <executions>
+            <execution>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <id>test</id>
+            </execution>
+		</executions>
+      </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <id>jar</id>
+                    </execution>
+				</executions>
+			</plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+  <!-- for base class -->
+  	<dependency>
+			<groupId>com.namtg.baseclass</groupId>
+			<artifactId>MmpAdmin</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>C:/Users/sharath/Documents/DeepthiJava/baseclass/baseclass.jar</systemPath>
+		</dependency>
+	<!--  helper class -->
+	<dependency>
+			<groupId>com.namtg.util</groupId>
+			<artifactId>MmpAdmin</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>C:/Users/sharath/Documents/DeepthiJava/baseclass/helper.jar</systemPath>
+		</dependency>
+	<!-- selenium jar -->	
+		    <dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.5.3</version>
+		</dependency>
+	<!-- junit -->
+    	<dependency>
+        	<groupId>junit</groupId>
+        	<artifactId>junit</artifactId>
+        	<version>3.8.1</version>
+      	    <scope>test</scope>
+	    </dependency>
+	  <!-- testNG -->
+	    <dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.8</version>
+			<scope>test</scope>
+		</dependency>
+  </dependencies>
+  
+</project>
